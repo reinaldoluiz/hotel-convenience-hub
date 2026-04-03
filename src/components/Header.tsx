@@ -36,7 +36,7 @@ const Header = () => {
 
         <a
           href="#contacto"
-          className="hidden md:inline-flex items-center px-5 py-2.5 text-sm font-semibold rounded-md bg-foreground text-card transition-colors hover:bg-foreground/90"
+          className="hidden md:inline-flex items-center px-5 py-2.5 text-sm font-semibold rounded-md bg-primary text-primary-foreground transition-colors hover:bg-primary-dark"
         >
           Solicitar piloto
         </a>
