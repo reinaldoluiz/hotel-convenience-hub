@@ -66,7 +66,7 @@ const ContactSection = () => {
 
           <button
             type="submit"
-            className="w-full px-7 py-3.5 rounded-md bg-foreground text-card font-semibold text-sm hover:bg-foreground/90 transition-colors"
+            className="w-full px-7 py-3.5 rounded-md bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary-dark transition-colors"
           >
             Solicitar información
           </button>

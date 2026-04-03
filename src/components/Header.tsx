@@ -67,7 +67,7 @@ const Header = () => {
           <a
             href="#contacto"
             onClick={() => setMobileOpen(false)}
-            className="block text-center px-5 py-2.5 text-sm font-semibold rounded-md bg-foreground text-card"
+            className="block text-center px-5 py-2.5 text-sm font-semibold rounded-md bg-primary text-primary-foreground"
           >
             Solicitar piloto
           </a>
