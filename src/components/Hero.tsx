@@ -22,7 +22,7 @@ const Hero = () => (
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
           <a
             href="#contacto"
-            className="px-7 py-3.5 rounded-md bg-foreground text-card font-semibold text-sm hover:bg-foreground/90 transition-colors w-full sm:w-auto text-center"
+            className="px-7 py-3.5 rounded-md bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary-dark transition-colors w-full sm:w-auto text-center"
           >
             Solicitar piloto
           </a>
