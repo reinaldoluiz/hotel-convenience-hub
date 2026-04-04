@@ -30,11 +30,11 @@ const Footer = () => (
 
       <div className="border-t border-border mt-8 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
         <span>© {new Date().getFullYear()} CheckBOX Vending. Todos los derechos reservados.</span>
-        <div className="flex gap-6">
-          <a href="#" className="hover:text-foreground transition-colors">Aviso Legal</a>
-          <a href="#" className="hover:text-foreground transition-colors">Política de Privacidad</a>
-          <a href="#" className="hover:text-foreground transition-colors">Política de Cookies</a>
-          <a href="#" className="hover:text-foreground transition-colors">Condiciones de Contratación</a>
+        <div className="flex flex-wrap gap-6">
+          <a href="/aviso-legal" className="hover:text-foreground transition-colors">Aviso Legal</a>
+          <a href="/politica-de-privacidad" className="hover:text-foreground transition-colors">Política de Privacidad</a>
+          <a href="/politica-de-cookies" className="hover:text-foreground transition-colors">Política de Cookies</a>
+          <a href="/condiciones-de-contratacion" className="hover:text-foreground transition-colors">Condiciones de Contratación</a>
         </div>
       </div>
     </div>
