@@ -8,7 +8,7 @@ const highlights = [
 ];
 
 const Hero = () => (
-  <section className="section-padding bg-card">
+  <section className="pt-10 md:pt-16 pb-20 md:pb-28 px-6 bg-card">
     <div className="container">
       <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
         <div className="flex-1 flex justify-center lg:justify-start order-2 lg:order-1">
