@@ -23,10 +23,10 @@ const Hero = () => (
           <span className="inline-block text-sm font-medium text-primary-dark tracking-wide uppercase mb-4">
             Solución inteligente para hoteles
           </span>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-5">
             Vending inteligente en habitaciones de hotel, integrado con tu PMS
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0 mb-10 leading-relaxed">
+          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto lg:mx-0 mb-8 leading-relaxed">
             Mejora la experiencia del huésped, reduce carga operativa y genera ingresos adicionales con una solución automatizada de conveniencia 24/7.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-8">
