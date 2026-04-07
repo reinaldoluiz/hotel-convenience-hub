@@ -1,4 +1,5 @@
 import { ShoppingBag, CreditCard, Link } from "lucide-react";
+import heroIllustration from "@/assets/hero-illustration.png";
 
 const highlights = [
   { icon: ShoppingBag, label: "Compra 24/7" },
@@ -9,7 +10,8 @@ const highlights = [
 const Hero = () => (
   <section className="section-padding bg-card">
     <div className="container">
-      <div className="max-w-3xl mx-auto text-center">
+      <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+      <div className="flex-1 text-center lg:text-left">
         <span className="inline-block text-sm font-medium text-primary-dark tracking-wide uppercase mb-4">
           Solución inteligente para hoteles
         </span>
