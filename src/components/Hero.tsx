@@ -8,7 +8,7 @@ const highlights = [
 ];
 
 const Hero = () => (
-  <section className="pt-10 md:pt-16 pb-20 md:pb-28 px-6 bg-card">
+  <section className="pt-5 md:pt-8 pb-20 md:pb-28 px-6 bg-card">
     <div className="container">
       <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
         <div className="flex-1 flex justify-center lg:justify-start order-2 lg:order-1">
@@ -26,10 +26,20 @@ const Hero = () => (
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-5">
             Vending inteligente en habitaciones de hotel, integrado con tu PMS
           </h1>
-          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto lg:mx-0 mb-8 leading-relaxed">
+          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto lg:mx-0 mb-6 leading-relaxed">
             Mejora la experiencia del huésped, reduce carga operativa y genera ingresos adicionales con una solución automatizada de conveniencia 24/7.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-8">
+
+          <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-6 mb-6">
+            {highlights.map(({ icon: Icon, label }) => (
+              <div key={label} className="flex items-center gap-2 text-muted-foreground">
+                <Icon size={18} className="text-primary-dark" strokeWidth={1.5} />
+                <span className="text-sm font-medium">{label}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
             <a
               href="#contacto"
               className="px-7 py-3.5 rounded-md bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary-dark transition-colors w-full sm:w-auto text-center"
@@ -44,15 +54,6 @@ const Hero = () => (
             </a>
           </div>
         </div>
-      </div>
-
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-6 md:gap-12 mt-12">
-        {highlights.map(({ icon: Icon, label }) => (
-          <div key={label} className="flex items-center gap-3 text-muted-foreground">
-            <Icon size={20} className="text-primary-dark" strokeWidth={1.5} />
-            <span className="text-sm font-medium">{label}</span>
-          </div>
-        ))}
       </div>
     </div>
   </section>
