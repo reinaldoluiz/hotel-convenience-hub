@@ -1,5 +1,5 @@
 import { ShoppingBag, CreditCard, Link } from "lucide-react";
-import heroIllustration from "@/assets/hero-illustration.png";
+import heroIllustration from "@/assets/hero-illustration-clean.png";
 
 const highlights = [
   { icon: ShoppingBag, label: "Compra 24/7" },
