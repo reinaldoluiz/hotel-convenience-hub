@@ -11,7 +11,15 @@ const Hero = () => (
   <section className="section-padding bg-card">
     <div className="container">
       <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-        <div className="flex-1 text-center lg:text-left">
+        <div className="flex-1 flex justify-center lg:justify-start order-2 lg:order-1">
+          <img
+            src={heroIllustration}
+            alt="Huésped usando CheckBOX Vending en su habitación de hotel"
+            className="w-full max-w-sm lg:max-w-md object-contain"
+          />
+        </div>
+
+        <div className="flex-1 text-center lg:text-left order-1 lg:order-2">
           <span className="inline-block text-sm font-medium text-primary-dark tracking-wide uppercase mb-4">
             Solución inteligente para hoteles
           </span>
@@ -35,14 +43,6 @@ const Hero = () => (
               Ver cómo funciona
             </a>
           </div>
-        </div>
-
-        <div className="flex-1 flex justify-center lg:justify-end">
-          <img
-            src={heroIllustration}
-            alt="Huésped usando CheckBOX Vending en su habitación de hotel"
-            className="w-full max-w-md lg:max-w-lg object-contain"
-          />
         </div>
       </div>
 
