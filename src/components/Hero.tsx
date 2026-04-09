@@ -32,8 +32,8 @@ const Hero = () => (
 
           <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-6 mb-6">
             {highlights.map(({ icon: Icon, label }) => (
-              <div key={label} className="flex items-center gap-2 text-muted-foreground">
-                <Icon size={18} className="text-primary-dark" strokeWidth={1.5} />
+              <div key={label} className="flex flex-col items-center gap-1.5 text-muted-foreground">
+                <Icon size={20} className="text-primary-dark" strokeWidth={1.5} />
                 <span className="text-sm font-medium">{label}</span>
               </div>
             ))}
