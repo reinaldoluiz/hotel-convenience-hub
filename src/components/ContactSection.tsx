@@ -1,18 +1,42 @@
 import { useState } from "react";
 import { toast } from "sonner";
 
+const WEB3FORMS_KEY = "daca8576-e4fe-4e82-94ac-4eb62994062a";
+
 const ContactSection = () => {
   const [accepted, setAccepted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!accepted) {
       toast.error("Debes aceptar la política de privacidad.");
       return;
     }
-    toast.success("Solicitud enviada correctamente. Nos pondremos en contacto contigo pronto.");
-    (e.target as HTMLFormElement).reset();
-    setAccepted(false);
+
+    setLoading(true);
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    formData.append("access_key", WEB3FORMS_KEY);
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+      const data = await res.json();
+      if (data.success) {
+        toast.success("Solicitud enviada correctamente. Nos pondremos en contacto contigo pronto.");
+        form.reset();
+        setAccepted(false);
+      } else {
+        toast.error("Error al enviar el formulario. Inténtelo de nuevo.");
+      }
+    } catch {
+      toast.error("Error de conexión. Inténtelo de nuevo.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const inputClass =
@@ -34,19 +58,23 @@ const ContactSection = () => {
           onSubmit={handleSubmit}
           className="bg-card border border-border rounded-lg p-8 md:p-10 space-y-5"
         >
+          <input type="hidden" name="subject" value="Nueva solicitud desde CheckBOX Vending" />
+          <input type="hidden" name="from_name" value="CheckBOX Vending Web" />
+
           <div className="grid sm:grid-cols-2 gap-5">
-            <input type="text" placeholder="Nombre *" required className={inputClass} />
-            <input type="text" placeholder="Hotel *" required className={inputClass} />
+            <input type="text" name="nombre" placeholder="Nombre *" required className={inputClass} />
+            <input type="text" name="hotel" placeholder="Hotel *" required className={inputClass} />
           </div>
           <div className="grid sm:grid-cols-2 gap-5">
-            <input type="text" placeholder="Cargo" className={inputClass} />
-            <input type="email" placeholder="Email *" required className={inputClass} />
+            <input type="text" name="cargo" placeholder="Cargo" className={inputClass} />
+            <input type="email" name="email" placeholder="Email *" required className={inputClass} />
           </div>
           <div className="grid sm:grid-cols-2 gap-5">
-            <input type="tel" placeholder="Teléfono" className={inputClass} />
-            <div /> {/* empty for alignment */}
+            <input type="tel" name="telefono" placeholder="Teléfono" className={inputClass} />
+            <div />
           </div>
           <textarea
+            name="mensaje"
             placeholder="Mensaje"
             rows={4}
             className={inputClass + " resize-none"}
@@ -66,9 +94,10 @@ const ContactSection = () => {
 
           <button
             type="submit"
-            className="w-full px-7 py-3.5 rounded-md bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary-dark transition-colors"
+            disabled={loading}
+            className="w-full px-7 py-3.5 rounded-md bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary-dark transition-colors disabled:opacity-60"
           >
-            Solicitar información
+            {loading ? "Enviando..." : "Solicitar información"}
           </button>
         </form>
       </div>
